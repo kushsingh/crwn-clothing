@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'; // connect is higher order component
 
 import { auth } from '../../firebase/firebase.utils';
 
@@ -32,4 +33,9 @@ const Header = ({ currentUser }) => (
     </div>
 )
 
-export default Header;
+// this naming can be anything bit mapStateToProps is standard with redux codebases
+const mapStateToProps = state => ({
+    currentUser : state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Header);
