@@ -22,7 +22,7 @@ export const selectCartItemsCount = createSelector(
         )
 );
 
-export const salectCartTotal = createSelector(
+export const selectCartTotal = createSelector(
     [selectCartItems],
     cartItems => 
         cartItems.reduce(
